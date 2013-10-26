@@ -21,4 +21,9 @@ function GraphWrapper(graph_json) {
         }
         return null;
     }
+
+    this.get_all_segments = function() {
+      var segment_parser = new SegmentParser();
+      return segment_parser.parse(this.graph_json);
+    }
 }

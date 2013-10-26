@@ -1,4 +1,3 @@
-//game
 function Game(number_of_players) {
   this.number_of_players = number_of_players;
   this.players_position = Array();
@@ -17,6 +16,24 @@ function Game(number_of_players) {
     frontend.update(players_position);
   }
 
+  this.screen_click_from_player = function(id, x, y) {
+    var player = this.get_player_by_id(id);
+    var click_point = new Point(x,y);
+    var all_segments = this.graph_wrapper.get_all_segments();
+    var segment_finder = new SegmentFinder(all_segments);
+    var target_segment = segment_finder.get_closest_segment_to(click_point);
+
+    var move_validator = new MoveValidator();
+    
+    if (move_validator.validate(player.current_location, target_segment, this.graph_wrapper))
+    {
+      player.next_segment = target_segment;
+    }
+  }
+
+  this.get_player_by_id = function(id) {
+    return this.players[0];
+  }
 
   this.init =  function () {
       this.graph_wrapper = new GraphWrapper(default_graph);

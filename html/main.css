@@ -1,9 +1,19 @@
 body {
 }
 
+.intro {
+	background-color: #6097F0;
+	padding: 30px;
+}
+
+.introText {
+	text-align: center;
+	color:#F2F5FF;
+	font-family: sans-serif;
+}
+
 .header {
 	position: absolute;
-
 }
 
 .board {

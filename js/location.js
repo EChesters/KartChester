@@ -3,6 +3,6 @@ function Location(segment, segment_position) {
     this.segment_position = segment_position;
 
     this.to_coordinates = function() {
-        return new point();
+        return new Point();
     }
 }

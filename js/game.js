@@ -63,35 +63,59 @@ var default_graph =
     [
         {
             "id": 1,
-            "start_x": 10,
-            "start_y": 10,
-            "end_x": 20,
-            "end_y": 20,
-            "connected_edges": [2]
+            "start_x": 33.33,
+            "start_y": 25,
+            "end_x": 66.66,
+            "end_y": 25,
+            "connected_edges": [4, 5]
         },
         {
             "id": 2,
-            "start_x": 20,
-            "start_y": 20,
-            "end_x": 30,
-            "end_y": 20,
-            "connected_edges": [1,3]
+            "start_x": 33.33,
+            "start_y": 50,
+            "end_x": 66.66,
+            "end_y": 50,
+            "connected_edges": [4, 5, 6, 7]
         },
         {
             "id": 3,
-            "start_x": 30,
-            "start_y": 20,
-            "end_x": 40,
-            "end_y": 10,
-            "connected_edges": [2,4]
+            "start_x": 33.33,
+            "start_y": 75,
+            "end_x": 66.66,
+            "end_y": 75,
+            "connected_edges": [6,7]
         },
         {
             "id": 4,
-            "start_x": 30,
-            "start_y": 20,
-            "end_x": 40,
-            "end_y": 30,
-            "connected_edges": [2,3]
+            "start_x": 33.33,
+            "start_y": 25,
+            "end_x": 33.33,
+            "end_y": 50,
+            "connected_edges": [1, 2, 6]
+        }
+        {
+            "id": 5,
+            "start_x": 66.66,
+            "start_y": 25,
+            "end_x": 66.66,
+            "end_y": 50,
+            "connected_edges": [1, 2, 7]
+        }
+        {
+            "id": 6,
+            "start_x": 33.33,
+            "start_y": 50,
+            "end_x": 33.33,
+            "end_y": 75,
+            "connected_edges": [4, 3]
+        }
+        {
+            "id": 7,
+            "start_x": 66.66,
+            "start_y": 50,
+            "end_x": 66.66,
+            "end_y": 75,
+            "connected_edges": [3,5]
         }
     ]
 

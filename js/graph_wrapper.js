@@ -12,12 +12,12 @@ function GraphWrapper(graph_json) {
         return [];
     }
 
-    this.get_edge_for_id = function (id) {
+    this.get_segment_for_id = function (id) {
         for (var i=0; i<this.graph_json.length; i++) {
-            edge = this.graph_json[i];
+            var edge = this.graph_json[i];
             console.log(edge);
             if (edge.id == id ) {
-                return edge;
+                return new segment_parser().parse([edge])[0];
             }
         }
         return null;

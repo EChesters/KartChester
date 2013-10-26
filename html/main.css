@@ -7,16 +7,22 @@
 /* line 12, main.scss */
 .introText {
   text-align: center;
-  color: #6097f0;
+  color: #f2f5ff;
   font-family: sans-serif;
 }
 
-/* line 18, main.scss */
+/* line 22, main.scss */
 .header {
   position: absolute;
 }
 
-/* line 22, main.scss */
+/* line 26, main.scss */
+.logo {
+  max-width: 150px;
+  max-height: 150px;
+}
+
+/* line 31, main.scss */
 .board {
   max-width: 800px;
   max-height: 750px;
@@ -24,13 +30,33 @@
   position: relative;
 }
 
-/* line 29, main.scss */
+/* line 38, main.scss */
 .map {
   width: 100%;
 }
 
-/* line 33, main.scss */
+/* line 42, main.scss */
 .avatar {
   position: absolute;
   transition: all 0.7s ease-in;
+  margin-top: -89px;
+  margin-left: -39px;
+  border: 3px solid #6097f0;
+  border-radius: 5px;
+  box-shadow: 0px -3px 6px white;
+}
+/* line 50, main.scss */
+.avatar img {
+  vertical-align: top;
+}
+/* line 53, main.scss */
+.avatar > .arrow {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #6097f0;
+  position: absolute;
+  bottom: -13px;
+  left: 27px;
 }

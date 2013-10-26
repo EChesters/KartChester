@@ -15,7 +15,6 @@ function GraphWrapper(graph_json) {
     this.get_segment_for_id = function (id) {
         for (var i=0; i<this.graph_json.length; i++) {
             var edge = this.graph_json[i];
-            console.log(edge);
             if (edge.id == id ) {
                 return new SegmentParser().parse([edge])[0];
             }

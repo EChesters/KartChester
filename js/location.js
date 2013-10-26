@@ -3,6 +3,8 @@ function Location(a_segment, segment_position) {
     this.segment_position = segment_position;
 
     this.to_coordinates = function() {
+        console.log("to_coordinates:");
+        console.log(this.current_segment);
         var my_x = this.segment_position*(this.current_segment.end_point.x - this.current_segment.start_point.x) + this.current_segment.start_point.x;
         var my_y = this.segment_position*(this.current_segment.end_point.y - this.current_segment.start_point.y) + this.current_segment.start_point.y;
         return new Point(my_x, my_y);

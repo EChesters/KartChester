@@ -22,14 +22,13 @@ function Game(number_of_players) {
   this.init =  function () {
       this.graph_wrapper = new GraphWrapper(default_graph);
       this.start_game_location = new Location(this.graph_wrapper.get_segment_for_id(1),0);
-      this.increment = 30;
+      this.increment = 3;
       var player = new Player(1,this.start_game_location);
       this.add_player(player);
-      player.current_location = this.start_game_location;//new Location(this.graph_wrapper.get_segment_for_id(1),0);
 
-      console.log('graph wrapper: ' + this.graph_wrapper.get_segment_for_id(1).end_point.x);
-      console.log(this.start_game_location);
-      console.log(player.current_location.segment);
+//      console.log('graph wrapper: ' + this.graph_wrapper.get_segment_for_id(1).end_point.x);
+//      console.log(this.start_game_location);
+//      console.log(player.current_location);
   }
 
 
@@ -67,7 +66,7 @@ function Game(number_of_players) {
 var default_graph =
     [
         {
-            "id": "1",
+            "id": 1,
             "start_x": 10,
             "start_y": 10,
             "end_x": 20,
@@ -75,7 +74,7 @@ var default_graph =
             "connected_edges": [2]
         },
         {
-            "id": "2",
+            "id": 2,
             "start_x": 20,
             "start_y": 20,
             "end_x": 30,
@@ -83,7 +82,7 @@ var default_graph =
             "connected_edges": [1,3]
         },
         {
-            "id": "3",
+            "id": 3,
             "start_x": 30,
             "start_y": 20,
             "end_x": 40,
@@ -91,7 +90,7 @@ var default_graph =
             "connected_edges": [2,4]
         },
         {
-            "id": "4",
+            "id": 4,
             "start_x": 30,
             "start_y": 20,
             "end_x": 40,
@@ -101,15 +100,7 @@ var default_graph =
     ]
 
 
-var default_next_segment =
-{
-    "id": "2",
-    "start_x": 20,
-    "start_y": 20,
-    "end_x": 30,
-    "end_y": 20,
-    "connected_edges": [1,3]
-}
+var default_next_segment = new Segment(2, new Point(20,20), new Point(30,20));
 
 
 function random_player_position_generator(players) {

@@ -14,7 +14,7 @@ function Game(number_of_players) {
         players_position.push(this.players[i].current_location.to_coordinates())
     }
 
-    frontend.update(this.players_position);
+    frontend.update(players_position);
   }
 
 
@@ -92,7 +92,7 @@ var default_graph =
             "end_x": 33.33,
             "end_y": 50,
             "connected_edges": [1, 2, 6]
-        }
+        },
         {
             "id": 5,
             "start_x": 66.66,
@@ -100,7 +100,7 @@ var default_graph =
             "end_x": 66.66,
             "end_y": 50,
             "connected_edges": [1, 2, 7]
-        }
+        },
         {
             "id": 6,
             "start_x": 33.33,
@@ -108,7 +108,7 @@ var default_graph =
             "end_x": 33.33,
             "end_y": 75,
             "connected_edges": [4, 3]
-        }
+        },
         {
             "id": 7,
             "start_x": 66.66,

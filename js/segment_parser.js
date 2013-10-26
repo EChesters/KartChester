@@ -1,7 +1,6 @@
 function SegmentParser() {
   this.parse = function(map) {
     var segments = []
-    console.log(map);
 
     for(var index = 0; index < map.length; index++)
     {

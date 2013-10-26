@@ -9,7 +9,5 @@ $(document).ready(function (e) {
 		var boardHeight = ($(this).height()) / 100;
 		var finalY = (e.pageY - posY)/boardHeight;
 
-		console.log(boardHeight + ": " + boardWidth);
-        console.log( finalX + ' , ' + finalY);
     });
 });

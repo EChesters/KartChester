@@ -16,6 +16,10 @@ function Segment(id, start_point, end_point) {
 
         return just_2_decimals(2*area/this.len);
     }
+
+    this.get_a_copy = function () {
+        return new Segment(id, start_point, end_point);
+    }
 }
 
 

@@ -4,12 +4,31 @@
 	<title>KartChester!</title>
 	<link rel="stylesheet" type="text/css" href="reset.css">
 	<link rel="stylesheet" type="text/css" href="main.css">
+<<<<<<< HEAD
 	<link href='http://fonts.googleapis.com/css?family=Luckiest+Guy' rel='stylesheet' type='text/css'>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script type="text/javascript" src="../js/game.js"></script>
 	<script type="text/javascript" src="../js/front-end.js"></script>
 	<script type="text/javascript" src="../js/controller.js"></script>
+=======
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+    <script type="text/javascript" src="../js/point.js"></script>
+    <script type="text/javascript" src="../js/segment.js"></script>
+    <script type="text/javascript" src="../js/numbers.js"></script>
+    <script type="text/javascript" src="../js/graph_wrapper.js"></script>
+    <script type="text/javascript" src="../js/segment_parser.js"></script>
+    <script type="text/javascript" src="../js/game.js"></script>
+    <script type="text/javascript" src="../js/location.js"></script>
+    <script type="text/javascript" src="../js/player.js"></script>
+
+  <script type="text/javascript" src="../js/game.js"></script>
+  <script type="text/javascript" src="../js/front-end.js"></script>
+  <script type="text/javascript" src="../js/controller.js"></script>
+>>>>>>> 672d910569851e2b9651feda725e29355c71c8ae
     <script type="text/javascript" src="../js/temp.js"></script>
+
+
 </head>
 <body>
 	<div class="intro">
@@ -17,7 +36,10 @@
 	</div>
 	<div id="board" class="board">
 		<img src="../res/Map.png" class="map" id="map">
-		<img id="player1" src="../res/avatar.jpg" class="avatar" style='position: absolute'>
+    <div id="player1" class="avatar">
+  		<img src="../res/avatar.jpg">
+      <div class="arrow"></div>
+    </div>
 	</div>
 </body>
 </html>

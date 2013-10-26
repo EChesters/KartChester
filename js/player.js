@@ -1,4 +1,5 @@
 function Player(id, initial_location) {
     this.name = id;
-    this.location = initial_location
+    this.current_location = initial_location.get_a_copy();
+
 }

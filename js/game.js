@@ -12,7 +12,7 @@ function Game(number_of_players) {
 function random_player_position_generator(players) {
   positions = Array();
   for (var i = 0; i < players; i++) {
-    positions[i] = Array([Math.floor((Math.random()*801)+1), Math.floor((Math.random()*517)+1)]);
+    positions[i] = Array([Math.floor((Math.random()*100)+1), Math.floor((Math.random()*100)+1)]);
     
   }
   return positions;

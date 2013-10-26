@@ -1,8 +1,6 @@
 function Point(x,y) {
-    var new_point = {};
-    new_point.x = x;
-    new_point.y = y;
-    return new_point;
+    this.x = x;
+    this.y = y;
 }
 
 function distance_between_points(one_point, another_point){

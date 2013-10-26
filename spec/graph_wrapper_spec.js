@@ -13,7 +13,7 @@ describe("Graph Wrapper", function() {
         var graph_wrapper = new GraphWrapper(graph_json);
         var id = 1;
 
-        var expected_segment = new Segment(new Point(100,100),new Point(200,200))
+        var expected_segment = new Segment("1", new Point(100,100),new Point(200,200))
 
         expect(graph_wrapper.get_segment_for_id(id).start_point).toEqual(expected_segment.start_point);
         expect(graph_wrapper.get_segment_for_id(id).end_point).toEqual(expected_segment.end_point);

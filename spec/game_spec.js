@@ -53,7 +53,7 @@ describe("Game", function(){
 
         var game_increment = 150;
         var expected_position = 0.5;
-        var expected_segment = new Segment( new Point(100,200), new Point(100,300));
+        var expected_segment = new Segment("1",  new Point(100,200), new Point(100,300));
 
         game.increment = game_increment;
 

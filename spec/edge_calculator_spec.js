@@ -3,7 +3,7 @@ describe("Edge calculator", function() {
         var player_position = new Point(0.1, 0.1);
         var edge_start_point = new Point(0, 0);
         var edge_end_point = new Point(0, 0.5);
-        var edge = new Segment(edge_start_point, edge_end_point);
+        var edge = new Segment("1", edge_start_point, edge_end_point);
         expect(edge.distance_from_point(player_position)).toBe(0.1);
     });
 
@@ -11,7 +11,7 @@ describe("Edge calculator", function() {
         var player_position = new Point(0, 0.1);
         var edge_start_point = new Point(0, 0);
         var edge_end_point = new Point(0, 0.5);
-        var edge = new Segment(edge_start_point, edge_end_point);
+        var edge = new Segment("2", edge_start_point, edge_end_point);
         expect(edge.distance_from_point(player_position)).toBe(0);
     });
 
@@ -21,7 +21,7 @@ describe("Edge calculator", function() {
         var edge_start_point = new Point(2, 1);
         var edge_end_point = new Point(1, 0);
 
-        var edge = new Segment(edge_start_point, edge_end_point);
+        var edge = new Segment("3", edge_start_point, edge_end_point);
         expect(edge.distance_from_point(player_position)).toBe(1.41);
     });
 });

@@ -11,8 +11,10 @@ describe("Segment parser", function() {
     var parser = new SegmentParser();
     var segments = parser.parse(map_edges);
     expect(segments.length).toEqual(2);
+    expect(segments[0].id).toEqual("1");
     expect(segments[0].start_point).toEqual(new Point(100, 100));
     expect(segments[0].end_point).toEqual(new Point(200, 200));
+    expect(segments[1].id).toEqual("2");
     expect(segments[1].start_point).toEqual(new Point(300, 300));
     expect(segments[1].end_point).toEqual(new Point(400, 400));
   });

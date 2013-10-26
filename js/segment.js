@@ -1,5 +1,6 @@
-function Segment(start_point, end_point) {
+function Segment(id, start_point, end_point) {
 
+    this.id = id;
     this.start_point = start_point;
     this.end_point = end_point;
     this.len = distance_between_points(start_point,end_point);

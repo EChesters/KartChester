@@ -29,7 +29,7 @@ function Game(number_of_players) {
 
       console.log('graph wrapper: ' + this.graph_wrapper.get_segment_for_id(1).end_point.x);
       console.log(this.start_game_location);
-      console.log(player.current_location);
+      console.log(player.current_location.segment);
   }
 
 

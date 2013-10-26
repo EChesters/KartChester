@@ -18,7 +18,7 @@ function Segment(id, start_point, end_point) {
     }
 
     this.get_a_copy = function () {
-        return new Segment(start_point, end_point);
+        return new Segment(id, start_point, end_point);
     }
 }
 

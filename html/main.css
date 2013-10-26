@@ -1,28 +1,36 @@
-body {
-}
-
+/* line 7, main.scss */
 .intro {
-	background-color: #6097F0;
-	padding: 30px;
+  background-color: #6097F0;
+  padding: 30px;
 }
 
+/* line 12, main.scss */
 .introText {
-	text-align: center;
-	color:#F2F5FF;
-	font-family: sans-serif;
+  text-align: center;
+  color: #6097f0;
+  font-family: sans-serif;
 }
 
+/* line 18, main.scss */
 .header {
-	position: absolute;
+  position: absolute;
 }
 
+/* line 22, main.scss */
 .board {
-	max-width: 800px;
-	max-height: 750px;
-	margin: 0 auto;
-	position:relative;
+  max-width: 800px;
+  max-height: 750px;
+  margin: 0 auto;
+  position: relative;
 }
 
+/* line 29, main.scss */
 .map {
-	width:100%;
+  width: 100%;
+}
+
+/* line 33, main.scss */
+.avatar {
+  position: absolute;
+  transition: all 0.7s ease-in;
 }

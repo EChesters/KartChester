@@ -1,6 +1,5 @@
-$header: #6097F0
-$fontcolor: #F2F5FF
-
+$header: #6097F0;
+$fontcolor: #F2F5FF;	
 
 body {
 }
@@ -38,4 +37,9 @@ body {
 
 .map {
 	width:100%;
+}
+
+.avatar {
+	position: absolute;
+	transition: all 0.7s ease-in;
 }

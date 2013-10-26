@@ -22,6 +22,6 @@ describe("Edge calculator", function() {
         edge_end_point = point(1,0);
 
         edge = new segment(edge_start_point,edge_end_point);
-        expect(edge.distance_from_point(player_position)).toBe(1.4);
+        expect(edge.distance_from_point(player_position)).toBe(1.41);
     });
 });

@@ -29,7 +29,10 @@ describe("Game", function(){
             ]
 
         graph_wrapper = new GraphWrapper(one_edge_graph);
-        game.init_with_graph(graph_wrapper);
+        game.graph_wrapper = graph_wrapper;
+        game.start_game_location = new Location(graph_wrapper.get_segment_for_id(1),0);
+
+
 
         id_of_player = 1;
         player = new Player(id_of_player, game.start_game_location);
@@ -45,7 +48,7 @@ describe("Game", function(){
 
         game.update_position_of_player(player, null);
 
-        expect(player.location.segment_position).toEqual(expected_position)
+        expect(player.current_location.segment_position).toEqual(expected_position)
 
     })
 
@@ -59,8 +62,8 @@ describe("Game", function(){
 
         game.update_position_of_player(player, expected_segment);
 
-        expect(player.location.segment).toEqual(expected_segment)
-        expect(player.location.segment_position).toEqual(expected_position)
+        expect(player.current_location.current_segment).toEqual(expected_segment)
+        expect(player.current_location.segment_position).toEqual(expected_position)
 
     })
 

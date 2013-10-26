@@ -7,39 +7,110 @@ function Game(number_of_players) {
   this.increment = 1;
 
   this.update = function(frontend) {
-    this.players_position = random_player_position_generator(this.number_of_players);
+    this.update_players();
+    var players_position = Array();
+
+    for (var i=0;i<this.players.length;i++){
+        players_position.push(this.players[i].current_location.to_coordinates())
+    }
+
+//    this.players_position = random_player_position_generator(this.number_of_players);
     frontend.update(this.players_position);
   }
 
 
+  this.init =  function () {
+      this.graph_wrapper = new GraphWrapper(default_graph);
+      this.start_game_location = new Location(this.graph_wrapper.get_segment_for_id(1),0);
+      this.increment = 30;
+      var player = new Player(1,this.start_game_location);
+      this.add_player(player);
+      player.current_location = this.start_game_location;//new Location(this.graph_wrapper.get_segment_for_id(1),0);
 
-  this.init_with_graph =  function (graph_wrapper){
-        this.graph_wrapper = graph_wrapper;
-        this.start_game_location = new Location(graph_wrapper.get_segment_for_id(1),0);
-   }
+      console.log('graph wrapper: ' + this.graph_wrapper.get_segment_for_id(1).end_point.x);
+      console.log(this.start_game_location);
+      console.log(player.current_location);
+  }
+
 
   this.add_player = function (player) {
       this.players.push(player);
   }
 
+  this.update_players = function () {
+      for (var i =0 ; i<this.players.length; i++) {
+          this.update_position_of_player(this.players[i],default_next_segment)
+      }
+  }
+
   this.update_position_of_player = function (player, next_segment) {
-      var player_location = player.location;
-      var new_position = player_location.segment_position * player_location.segment.len + this.increment;
-      if (new_position <= player_location.segment.len) {
-              player.location.segment_position = just_2_decimals(new_position/player_location.segment.len);
-      }else {
-          new_position -= player_location.segment.len;
-          player.location.segment = next_segment;
+      var player_location = player.current_location;
+      var new_position = (player_location.segment_position * player_location.current_segment.len) + this.increment;
+      if (new_position <= player_location.current_segment.len) {
+              player.current_location.segment_position = just_2_decimals(new_position/player_location.current_segment.len);
+      }
+      else
+      {
+          new_position -= player_location.current_segment.len;
+          player.current_location.current_segment = next_segment;
 
-          if (new_position>player_location.segment.len) { new_position = player_location.segment.len}
+          if (new_position>player_location.current_segment.len) { new_position = player_location.current_segment.len}
 
-          player.location.segment_position = just_2_decimals(new_position/player_location.segment.len);
+          player.current_location.segment_position = just_2_decimals(new_position/player_location.current_segment.len);
 
       }
 
   }
 
 }
+
+var default_graph =
+    [
+        {
+            "id": "1",
+            "start_x": 10,
+            "start_y": 10,
+            "end_x": 20,
+            "end_y": 20,
+            "connected_edges": [2]
+        },
+        {
+            "id": "2",
+            "start_x": 20,
+            "start_y": 20,
+            "end_x": 30,
+            "end_y": 20,
+            "connected_edges": [1,3]
+        },
+        {
+            "id": "3",
+            "start_x": 30,
+            "start_y": 20,
+            "end_x": 40,
+            "end_y": 10,
+            "connected_edges": [2,4]
+        },
+        {
+            "id": "4",
+            "start_x": 30,
+            "start_y": 20,
+            "end_x": 40,
+            "end_y": 30,
+            "connected_edges": [2,3]
+        }
+    ]
+
+
+var default_next_segment =
+{
+    "id": "2",
+    "start_x": 20,
+    "start_y": 20,
+    "end_x": 30,
+    "end_y": 20,
+    "connected_edges": [1,3]
+}
+
 
 function random_player_position_generator(players) {
   var positions = Array();

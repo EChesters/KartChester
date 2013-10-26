@@ -7,7 +7,7 @@ describe("Graph Wrapper", function() {
         expect(graph_wrapper.get_connected_edges_ids(id_to_look_for)).toEqual(expected_list_of_ids);
     });
 
-    it("should return an segment for an id", function(){
+    it("should return an current_segment for an id", function(){
 
         var graph_json = sample_data_graph;
         var graph_wrapper = new GraphWrapper(graph_json);

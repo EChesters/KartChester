@@ -1,12 +1,11 @@
 //game
-function game(number_of_players, frontend) {
-  this.number_of_players = players;
+function Game(number_of_players) {
+  this.number_of_players = number_of_players;
   this.players_position = Array();
-  this.frontend = frontend;
 
-  function update() {
+  this.update = function(frontend) {
     this.players_position = random_player_position_generator(this.number_of_players);
-    this.frontend.update(this.players_position);
+    frontend.update(this.players_position);
   }
 }
 

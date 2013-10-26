@@ -1,4 +1,4 @@
-var frontend = new frontend();
-var game = new game(1, frontend);
+var frontend = new Frontend();
+var game = new Game(1);
 
-game.update()
+game.update(frontend);

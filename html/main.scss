@@ -1,34 +1,46 @@
-$fontcolor: #FFFFFF;
+/*
+	COLOURS ====================
+*/
+$whitecolor: #FFFFFF;
 $bluecolor: #26ADE4;
+$greencolor: #D1E751;
+
+@mixin shadow {
+		box-shadow: -1px -1px 9px #5d5d5d;
+	} 
+
+/*
+	DIMENSIONS =================
+*/
+$margins: 10px;
 
 body {
+	background-color: $greencolor; 
 }
 
 .intro {
 	background-color: $bluecolor;
 	padding: 15px;
-	margin: 0 auto;
+	@include shadow;
 }
 
 .introText {
-	text-align: left;
-	display: inline-block;
-	color: $fontcolor;
+	color: $whitecolor;
 	font-family: 'Luckiest Guy', cursive;
 	font-size: 40px;
+	text-align: center;
 }
 
-
+.subbackground {
+	@include shadow;
+	margin: 0 auto;
+	width: 70%;
+	background-color:$whitecolor;
+	padding-bottom: 5px;
+}
 
 .header {
 	position: absolute;
-}
-
-.logo {
-	max-width: 150px;
-	max-height: 150px;
-	margin: 0 auto;
-	vertical-align: middle;
 }
 
 .board {

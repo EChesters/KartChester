@@ -4,4 +4,4 @@ function frontend() {
       $('#player'+ i+1).top(players_position[i][0]);
       $('#player'+ i+1).top(players_position[i][1]);
   }
-}
+};

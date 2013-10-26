@@ -1,4 +1,4 @@
-function point(x,y) {
+function Point(x,y) {
     var new_point = {};
     new_point.x = x;
     new_point.y = y;

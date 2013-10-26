@@ -5,7 +5,8 @@ function game(number_of_players, frontend) {
   this.frontend = frontend;
 
   function update() {
-    this.frontend.update(random_player_position_generator(this.number_of_players);
+    this.players_position = random_player_position_generator(this.number_of_players);
+    this.frontend.update(this.players_position);
   }
 }
 

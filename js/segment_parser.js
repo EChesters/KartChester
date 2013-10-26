@@ -1,4 +1,4 @@
-function segment_parser() {
+function SegmentParser() {
   this.parse = function(map) {
     var segments = []
     console.log(map);

@@ -17,7 +17,7 @@ function GraphWrapper(graph_json) {
             var edge = this.graph_json[i];
             console.log(edge);
             if (edge.id == id ) {
-                return new segment_parser().parse([edge])[0];
+                return new SegmentParser().parse([edge])[0];
             }
         }
         return null;

@@ -14,7 +14,6 @@ function Game(number_of_players) {
         players_position.push(this.players[i].current_location.to_coordinates())
     }
 
-//    this.players_position = random_player_position_generator(this.number_of_players);
     frontend.update(this.players_position);
   }
 
@@ -26,9 +25,6 @@ function Game(number_of_players) {
       var player = new Player(1,this.start_game_location);
       this.add_player(player);
 
-//      console.log('graph wrapper: ' + this.graph_wrapper.get_segment_for_id(1).end_point.x);
-//      console.log(this.start_game_location);
-//      console.log(player.current_location);
   }
 
 

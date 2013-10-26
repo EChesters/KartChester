@@ -10,7 +10,6 @@ function Frontend() {
 	this.update = function update(players_positions) {
 	    for (var i = 0; i < players_positions.length; i++) {
 	    	size_normalized = this.normalize_to_screen(players_positions[i][0]);
-	    	console.log(size_normalized);
 	    	$('#player'+ (i+1).toString()).css('left', size_normalized[0]);
 		    $('#player'+ (i+1).toString()).css('top', size_normalized[1]);
 	  	}

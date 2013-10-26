@@ -5,10 +5,6 @@ $whitecolor: #FFFFFF;
 $bluecolor: #26ADE4;
 $greencolor: #D1E751;
 
-@mixin shadow {
-		box-shadow: -1px -1px 9px #5d5d5d;
-	} 
-
 /*
 	DIMENSIONS =================
 */
@@ -20,8 +16,9 @@ body {
 
 .intro {
 	background-color: $bluecolor;
-	padding: 15px;
-	@include shadow;
+	padding-bottom: 15px;
+	box-shadow: -1px -1px 9px #5d5d5d;
+	
 }
 
 .introText {
@@ -32,11 +29,11 @@ body {
 }
 
 .subbackground {
-	@include shadow;
+	box-shadow: -1px 3px 9px #5d5d5d;
 	margin: 0 auto;
 	width: 70%;
+	padding-bottom: 150px;
 	background-color:$whitecolor;
-	padding-bottom: 5px;
 }
 
 .header {

@@ -1,23 +1,24 @@
-$header: #6097F0;
-$fontcolor: #F2F5FF;	
+$fontcolor: #FFFFFF;
+$bluecolor: #26ADE4;
 
 body {
 }
 
 .intro {
-	background-color: #6097F0;
-	padding: 30px;
+	background-color: $bluecolor;
+	padding: 15px;
+	margin: 0 auto;
 }
 
 .introText {
-	text-align: center;
+	text-align: left;
+	display: inline-block;
 	color: $fontcolor;
-	font-family: sans-serif;
+	font-family: 'Luckiest Guy', cursive;
+	font-size: 40px;
 }
 
-.button {
-	
-}
+
 
 .header {
 	position: absolute;
@@ -26,6 +27,8 @@ body {
 .logo {
 	max-width: 150px;
 	max-height: 150px;
+	margin: 0 auto;
+	vertical-align: middle;
 }
 
 .board {

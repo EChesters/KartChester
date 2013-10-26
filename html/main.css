@@ -1,0 +1,18 @@
+body {
+}
+
+.header {
+	position: absolute;
+
+}
+
+.board {
+	max-width: 800px;
+	max-height: 750px;
+	margin: 0 auto;
+	position:relative;
+}
+
+.map {
+	width:100%;
+}

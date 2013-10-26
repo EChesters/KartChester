@@ -12,12 +12,21 @@ body {
 
 .introText {
 	text-align: center;
-	color: $header;
+	color: $fontcolor;
 	font-family: sans-serif;
+}
+
+.button {
+	
 }
 
 .header {
 	position: absolute;
+}
+
+.logo {
+	max-width: 150px;
+	max-height: 150px;
 }
 
 .board {

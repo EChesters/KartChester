@@ -1,0 +1,32 @@
+$header: #6097F0
+$fontcolor: #F2F5FF
+
+
+body {
+}
+
+.intro {
+	background-color: #6097F0;
+	padding: 30px;
+}
+
+.introText {
+	text-align: center;
+	color: $header;
+	font-family: sans-serif;
+}
+
+.header {
+	position: absolute;
+}
+
+.board {
+	max-width: 800px;
+	max-height: 750px;
+	margin: 0 auto;
+	position:relative;
+}
+
+.map {
+	width:100%;
+}

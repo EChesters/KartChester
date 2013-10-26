@@ -1,4 +1,6 @@
-function Frontend() {
+function Frontend(game) {
+
+	this.game = game;
 
 	this.normalize_to_screen = function normalize_to_screen(normalize_position) {
 		return Array(

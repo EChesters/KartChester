@@ -24,7 +24,7 @@ function Game(number_of_players) {
     var target_segment = segment_finder.get_closest_segment_to(click_point);
 
     var move_validator = new MoveValidator();
-    
+
     if (move_validator.validate(player.current_location, target_segment, this.graph_wrapper))
     {
       player.next_segment = target_segment;
@@ -51,7 +51,7 @@ function Game(number_of_players) {
 
   this.update_players = function () {
       for (var i =0 ; i<this.players.length; i++) {
-          this.update_position_of_player(this.players[i],default_next_segment)
+          this.update_position_of_player(this.players[i],this.players[i].next_segment)
       }
   }
 

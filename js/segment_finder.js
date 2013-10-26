@@ -6,14 +6,17 @@ function SegmentFinder(segments) {
     }
     else
     {
-      var closest_segment = segments[0];
+      var min = 10000000;
+      var closest_segment = null;
 
-      for (var index = 1; index < segments.length; index++)
+      for (var index = 0; index < segments.length; index++)
       {
-         if (segments[index].distance_from_point(point) < closest_segment.distance_from_point(point))
-	 {
-	    closest_segment = segments[index];
-	 }
+         if ((segments[index].distance_from_point(point) < min)
+             && (segments[index].is_point_around(point)))
+	         {
+	            closest_segment = segments[index];
+                min = closest_segment.distance_from_point(point);
+	      }
       }
     }
 

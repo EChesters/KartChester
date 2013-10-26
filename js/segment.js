@@ -17,6 +17,13 @@ function Segment(id, start_point, end_point) {
         return just_2_decimals(2*area/this.len);
     }
 
+    this.is_point_around = function (point) {
+        var one_side_length = distance_between_points(point,start_point);
+        var the_other_side_length = distance_between_points(point,end_point);
+
+        return ((one_side_length*one_side_length<=this.len*this.len + the_other_side_length*the_other_side_length) && (the_other_side_length*the_other_side_length<=this.len*this.len + one_side_length*one_side_length));
+    }
+
     this.get_a_copy = function () {
         return new Segment(id, start_point, end_point);
     }

@@ -18,4 +18,15 @@ describe("Segment finder", function() {
     var closest_segment = segment_finder.get_closest_segment_to(search_point);
     expect(closest_segment).toEqual(segments[1]);
   });
+
+
+  it("should return the correct segment when there are 2 co-linear segments", function() {
+        var segments = [new Segment("1", new Point(0, 0), new Point(0, 100)),
+            new Segment("2", new Point(0, 100), new Point(0, 200))];
+        var search_point = new Point(10, 150);
+        var segment_finder = new SegmentFinder(segments);
+
+        var closest_segment = segment_finder.get_closest_segment_to(search_point);
+        expect(closest_segment).toEqual(segments[1]);
+    });
 });

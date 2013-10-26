@@ -1,4 +1,4 @@
-function segment(start_point, end_point) {
+function Segment(start_point, end_point) {
 
     this.start_point = start_point;
     this.end_point = end_point;
@@ -16,5 +16,7 @@ function segment(start_point, end_point) {
         return just_2_decimals(2*area/this.len);
     }
 }
+
+
 
 

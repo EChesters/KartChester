@@ -53,7 +53,7 @@ describe("Game", function(){
     it('should update the position of a player when reaching a node and stopping', function() {
 
         var game_increment = 150;
-        var expected_position = new Point(100, 200, 1);
+        var expected_position = new Point(100, 200, 2);
 
         game.increment = game_increment;
 
@@ -66,8 +66,8 @@ describe("Game", function(){
     })
 
     it("should update a player's next move when a screen click is received", function() {
-        game.screen_click_from_player(2, 100, 200);
+        game.screen_click_from_player(3, 200, 200);
 
-        expect(player.next_node).toEqual(new Point(100, 200, 2));
+        expect(player.next_node).toEqual(new Point(200, 200, 3));
     })
 })

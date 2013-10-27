@@ -22,7 +22,6 @@ function Game(number_of_players) {
     var all_nodes = this.graph_wrapper.get_all_nodes();
     var node_finder = new NodeFinder(all_nodes);
     var next_node = node_finder.get_closest_node_to(click_point);
-
     var move_validator = new MoveValidator();
 
     if (move_validator.validate(player.target_node, next_node, this.graph_wrapper))
@@ -39,7 +38,7 @@ function Game(number_of_players) {
       this.graph_wrapper = new GraphWrapper(default_graph);
       this.start_game_location = this.graph_wrapper.get_node_for_id(1);
       var target_node = this.graph_wrapper.get_node_for_id(2);
-      this.increment = 3;
+      this.increment = 10;
       var player = new Player(1,this.start_game_location, target_node);
       this.add_player(player);
 
@@ -52,11 +51,13 @@ function Game(number_of_players) {
 
   this.update_players = function () {
       for (var i =0 ; i<this.players.length; i++) {
-          this.update_position_of_player(this.players[i],this.players[i].next_node)
+          this.update_position_of_player(this.players[i],this.players[i].next_node);
       }
   }
 
   this.update_position_of_player = function (player, next_node) {
+      console.log(next_node);
+
       var player_location = player.current_position;
 
       var position_calculator = new PositionCalculator(this.increment);
@@ -64,8 +65,12 @@ function Game(number_of_players) {
 
       player.current_position = new_position;
 
-      if (player.current_position == player.target_node) {
+      if ((player.current_position.x === player.target_node.x)
+          && (player.current_position.y === player.target_node.y))
+      {
+          var a_node = player.target_node;
           player.target_node = next_node;
+          player.next_node  = a_node;
       }
 
   }

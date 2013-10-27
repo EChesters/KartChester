@@ -6,7 +6,7 @@ function GraphWrapper(graph_json) {
         for (var i=0; i<this.graph_json.length; i++) {
             var node = this.graph_json[i];
             if (node.id == id ) {
-                return new Point(node.x, node.y, 1);
+                return new Point(node.x, node.y, node.id);
             }
         }
         return null;

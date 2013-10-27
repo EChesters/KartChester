@@ -14,7 +14,7 @@ function Frontend(game) {
         var boardHeight = ($(this).height()) / 100;
         var finalY = (e.pageY - posY)/boardHeight;
 
-
+         console.log("look at me!!!");
         game.screen_click_from_player(1,finalX, finalY);
 
     }

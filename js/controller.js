@@ -22,4 +22,4 @@ function start_game() {
 	setInterval(function(){game.update(frontend);},1000);
 }
 
-window.setTimeout(start_game, 3000);
+window.setTimeout(start_game, 300);

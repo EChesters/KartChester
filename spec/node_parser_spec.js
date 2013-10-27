@@ -5,7 +5,7 @@ describe("Node parser", function() {
     expect(parser.parse(nodes)).toEqual([]);
   });
 
-  it("should convert a non-empty JSON map into the correct segments", function() {
+  it("should convert a non-empty JSON map into the correct nodes", function() {
     var map_nodes = [{"id": 1, "x": 100, "y": 100, "connected_nodes":[]},
 	             {"id": 2, "x": 300, "y": 300, "connected_nodes":[]}];
     var parser = new NodeParser();

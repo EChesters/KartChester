@@ -10,7 +10,7 @@ function Game(number_of_players) {
     var players_position = Array();
 
     for (var i=0;i<this.players.length;i++){
-        players_position.push(this.players[i].current_location.to_coordinates())
+        players_position.push(this.players[i].current_position)
     }
 
     frontend.update(players_position);
@@ -38,8 +38,9 @@ function Game(number_of_players) {
   this.init =  function () {
       this.graph_wrapper = new GraphWrapper(default_graph);
       this.start_game_location = this.graph_wrapper.get_node_for_id(1);
+      var target_node = this.graph_wrapper.get_node_for_id(2);
       this.increment = 3;
-      var player = new Player(1,this.start_game_location);
+      var player = new Player(1,this.start_game_location, target_node);
       this.add_player(player);
 
   }
@@ -51,7 +52,7 @@ function Game(number_of_players) {
 
   this.update_players = function () {
       for (var i =0 ; i<this.players.length; i++) {
-          this.update_position_of_player(this.players[i],this.players[i].next_segment)
+          this.update_position_of_player(this.players[i],this.players[i].next_node)
       }
   }
 
@@ -72,64 +73,12 @@ function Game(number_of_players) {
 }
 
 var default_graph =
-    [
-        {
-            "id": 1,
-            "start_x": 33.33,
-            "start_y": 25,
-            "end_x": 66.66,
-            "end_y": 25,
-            "connected_edges": [4, 5]
-        },
-        {
-            "id": 2,
-            "start_x": 33.33,
-            "start_y": 50,
-            "end_x": 66.66,
-            "end_y": 50,
-            "connected_edges": [4, 5, 6, 7]
-        },
-        {
-            "id": 3,
-            "start_x": 33.33,
-            "start_y": 75,
-            "end_x": 66.66,
-            "end_y": 75,
-            "connected_edges": [6,7]
-        },
-        {
-            "id": 4,
-            "start_x": 33.33,
-            "start_y": 25,
-            "end_x": 33.33,
-            "end_y": 50,
-            "connected_edges": [1, 2, 6]
-        },
-        {
-            "id": 5,
-            "start_x": 66.66,
-            "start_y": 25,
-            "end_x": 66.66,
-            "end_y": 50,
-            "connected_edges": [1, 2, 7]
-        },
-        {
-            "id": 6,
-            "start_x": 33.33,
-            "start_y": 50,
-            "end_x": 33.33,
-            "end_y": 75,
-            "connected_edges": [4, 3, 2]
-        },
-        {
-            "id": 7,
-            "start_x": 66.66,
-            "start_y": 50,
-            "end_x": 66.66,
-            "end_y": 75,
-            "connected_edges": [3,5,2]
-        }
-    ]
+    [{"id":0,"x":33,"y":24.375,"connected_nodes":[1,2]},
+     {"id":1,"x":66.625,"y":24.875,"connected_nodes":[0,3]},
+     {"id":2,"x":33.125,"y":50.25,"connected_nodes":[0,3,4]},
+     {"id":3,"x":66.625,"y":50.375,"connected_nodes":[2,1,5]},
+     {"id":4,"x":32.75,"y":74.625,"connected_nodes":[5,2]},
+     {"id":5,"x":67.375,"y":74.125,"connected_nodes":[3,4]}]
 
 
 

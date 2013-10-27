@@ -18,8 +18,19 @@ function handler (req, res) {
 }
 
 io.sockets.on('connection', function (socket) {
-   // socket.emit('news', { hello: 'world' });
     socket.on('init', function (data) {
+        console.log("init");
         console.log(data);
     });
+    socket.on('send_click_from_player', function (data) {
+        console.log("click_from_player");
+        console.log(data);
+    });
+
+    function send_update() {
+        socket.emit('update',[1,2,3]);
+    }
+
+    setInterval(send_update,2000);
+
 });

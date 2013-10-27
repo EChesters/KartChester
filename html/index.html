@@ -3,6 +3,7 @@
 <head>
 	<title>KartChester!</title>
 	<link rel="stylesheet" type="text/css" href="reset.css">
+    <link rel="stylesheet" type="text/css" href="home.css">
 	<link rel="stylesheet" type="text/css" href="main.css">
 
 	<link href='http://fonts.googleapis.com/css?family=Slackey' rel='stylesheet' type='text/css'>
@@ -10,7 +11,6 @@
     <script type="text/javascript" src="../js/point.js"></script>
     <script type="text/javascript" src="../js/numbers.js"></script>
     <script type="text/javascript" src="../js/graph_wrapper.js"></script>
-    <script type="text/javascript" src="../js/game_wrapper.js"></script>
     <script type="text/javascript" src="../js/node_parser.js"></script>
     <script type="text/javascript" src="../js/node_finder.js"></script>
     <script type="text/javascript" src="../js/move_validator.js"></script>
@@ -21,17 +21,33 @@
     <script type="text/javascript" src="../js/game.js"></script>
     <script type="text/javascript" src="../js/front-end.js"></script>
     <script type="text/javascript" src="../js/controller.js"></script>
-    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="../js/home.js"></script>
 
 </head>
 <body>
+
+    <div id="welcome-panel">
+        <p class="titleText logoText">Welcome to</p>
+        <p class="titleText logo">KartChester!</p>
+
+        <p class="instruction">Please choose your avatar:</p>
+
+        <div class="avatars">
+            <a href="index.html"><img src="../res/avatar.jpg" alt="avatar" class="avatar-preview"></a>
+            <a href="index.html"><img src="../res/avatar2.png" alt="avatar" class="avatar-preview"></a>
+            <a href="index.html"><img src="../res/avatar3.jpg" alt="avatar" class="avatar-preview"></a>
+            <a href="index.html"><img src="../res/avatar4.jpg" alt="avatar" class="avatar-preview"></a>
+        </div>
+    </div>
+
 	<div id="board" class="board">
 		<p class="introText">KartChester!</p>
 		<img src="../res/Map.png" class="map" id="map">
    		<div id="player1" class="avatar">
-  			<img src="../res/avatar.jpg">
-      	<div class="arrow"></div>
-    </div>
+      		<img src="#" id='avatarimg'>
+          	<div class="arrow"></div>
+        </div>
 	</div>
+
 </body>
 </html>

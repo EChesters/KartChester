@@ -1,4 +1,6 @@
 var Point = require('./point_server.js');
+var NodeParser = require('./node_parser_server.js');
+
 function GraphWrapperServer(graph_json) {
 
     this.graph_json = graph_json;

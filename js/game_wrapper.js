@@ -11,7 +11,7 @@ function GameWrapper() {
         socket.emit('init',1);
     }
 
-    this.send_click_from_player = function (player_id,x,y) {
+    this.click_from_player = function (player_id,x,y) {
         socket.emit('click_from_player',{player_id : player_id, x: x, y: y});
     }
 

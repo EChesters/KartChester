@@ -1,5 +1,8 @@
 var GraphWrapper = require('./graph_wrapper_server.js');
 var Player = require('./player_server.js');
+var Point = require('./point_server.js');
+var NodeFinder = require('./node_finder_server.js');
+var MoveValidator = require('./move_validator_server.js');
 
 function GameServer() {
 
@@ -18,7 +21,7 @@ function GameServer() {
     frontend.update(players_position);
   }
 
-  this.screen_click_from_player = function(id, x, y) {
+  this.click_from_player = function(id, x, y) {
     var player = this.get_player_by_id(id);
     var click_point = new Point(x, y, 1);
     var all_nodes = this.graph_wrapper.get_all_nodes();

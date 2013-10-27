@@ -29,15 +29,11 @@ function handler (req, res) {
 
 io.sockets.on('connection', function (socket) {
     socket.on('init', function (player_id) {
-        console.log("init");
-        console.log(player_id);
         var player = game_server.create_player_with_id(player_id);
         game_server.add_player(player);
-        console.log(game_server.players);
     });
-    socket.on('send_click_from_player', function (data) {
-        console.log("click_from_player");
-        console.log(data);
+    socket.on('click_from_player', function (data) {
+        game_server.click_from_player(data.id, data.x, data.y);
     });
 
     function send_update() {

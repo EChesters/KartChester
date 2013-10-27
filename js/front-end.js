@@ -19,6 +19,6 @@ function Frontend(game) {
 
   	this.calculate_size = function(windows_height, windows_width, board_height, board_width) {
 		// return board h and w
-		return [1, 2];
+		return [windows_height, windows_width];
 	};		
 };

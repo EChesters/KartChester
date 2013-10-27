@@ -2,17 +2,7 @@ var app = require('http').createServer(handler)
     , io = require('socket.io').listen(app)
     , fs = require('fs')
 
-var GameServer = require('./js/game_server.js')
-
-var game_server;
 app.listen(8081);
-
-function init_game(){
-    game_server =  new GameServer();
-    game_server.init();
-}
-
-init_game();
 
 function handler (req, res) {
     fs.readFile(".." + req.url,
@@ -28,12 +18,9 @@ function handler (req, res) {
 }
 
 io.sockets.on('connection', function (socket) {
-    socket.on('init', function (player_id) {
+    socket.on('init', function (data) {
         console.log("init");
-        console.log(player_id);
-        var player = game_server.create_player_with_id(player_id);
-        game_server.add_player(player);
-        console.log(game_server.players);
+        console.log(data);
     });
     socket.on('send_click_from_player', function (data) {
         console.log("click_from_player");
@@ -47,4 +34,3 @@ io.sockets.on('connection', function (socket) {
     setInterval(send_update,2000);
 
 });
-

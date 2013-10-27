@@ -2,6 +2,10 @@ $(document).ready(function() {
 
 });
 
+server_ip_root = 'http://213.5.93.253:9292/';
+server_ip_init = server_ip_root + 'init';
+server_ip_update = server_ip_root + 'update';
+server_ip_players_position = server_ip_root + 'players-position';
 
 function start_game() {
 	
@@ -29,15 +33,16 @@ window.setTimeout(start_game, 300);
 var Game = function() {
 
 	this.init = function(){
-		// send id to the server
+		$.get(server_ip_init);
 	}; 
 	this.update = function(frontend) {
-		// get list of players
-		// players_position = pull from server
-		frontend.update(players_position);
+		$.get(server_ip_update, function(data) {
+			frontend.update(data);
+		});
 	};
 
 	this.screen_click_from_player = function(player_id, posx, posy) {
-		// call server with this parameters
+		alert('hello!');
+		// $.post(server_ip_players_position, { player_id: player_id, posx: posx; posy: posy });
 	}
 }

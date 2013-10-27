@@ -17,7 +17,7 @@ function Frontend(game) {
 
          console.log("look at me!!!");
         game.screen_click_from_player(1,finalX, finalY);
-        new GameWrapper().click_from_player(1,finalX,finalY);
+        new GameWrapper().send_click_from_player(1,finalX,finalY);
 
     }
 

@@ -2,7 +2,6 @@ function Frontend(game) {
 
 	this.game = game;
 
-
     this.board = $('#board');
 
 
@@ -17,7 +16,6 @@ function Frontend(game) {
 
          console.log("look at me!!!");
         game.screen_click_from_player(1,finalX, finalY);
-        new GameWrapper().send_click_from_player(1,finalX,finalY);
 
     }
 

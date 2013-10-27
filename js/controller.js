@@ -19,9 +19,6 @@ function start_game() {
 	$('#board').width(maximised_map_size[1]).height(maximised_map_size[0]);
 
 	game.init();
-    var game_wrapper = new GameWrapper();
-    game_wrapper.init();
-
 	setInterval(function(){game.update(frontend);},1000);
 }
 

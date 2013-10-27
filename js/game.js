@@ -124,7 +124,7 @@ var default_graph =
             "start_y": 50,
             "end_x": 33.33,
             "end_y": 75,
-            "connected_edges": [4, 3]
+            "connected_edges": [4, 3, 2]
         },
         {
             "id": 7,
@@ -132,7 +132,7 @@ var default_graph =
             "start_y": 50,
             "end_x": 66.66,
             "end_y": 75,
-            "connected_edges": [3,5]
+            "connected_edges": [3,5,2]
         }
     ]
 

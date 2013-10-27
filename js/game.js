@@ -18,16 +18,16 @@ function Game(number_of_players) {
 
   this.screen_click_from_player = function(id, x, y) {
     var player = this.get_player_by_id(id);
-    var click_point = new Point(x,y);
-    var all_segments = this.graph_wrapper.get_all_segments();
-    var segment_finder = new SegmentFinder(all_segments);
-    var target_segment = segment_finder.get_closest_segment_to(click_point);
+    var click_point = new Point(x, y, 1);
+    var all_nodes = this.graph_wrapper.get_all_nodes();
+    var node_finder = new NodeFinder(all_nodes);
+    var next_node = node_finder.get_closest_node_to(click_point);
 
     var move_validator = new MoveValidator();
 
-    if (move_validator.validate(player.current_location, target_segment, this.graph_wrapper))
+    if (move_validator.validate(player.target_node, next_node, this.graph_wrapper))
     {
-      player.next_segment = target_segment;
+      player.next_node = next_node;
     }
   }
 
@@ -37,7 +37,7 @@ function Game(number_of_players) {
 
   this.init =  function () {
       this.graph_wrapper = new GraphWrapper(default_graph);
-      this.start_game_location = new Location(this.graph_wrapper.get_segment_for_id(1),0);
+      this.start_game_location = this.graph_wrapper.get_node_for_id(1);
       this.increment = 3;
       var player = new Player(1,this.start_game_location);
       this.add_player(player);
@@ -55,21 +55,16 @@ function Game(number_of_players) {
       }
   }
 
-  this.update_position_of_player = function (player, next_segment) {
-      var player_location = player.current_location;
-      var new_position = (player_location.segment_position * player_location.current_segment.len) + this.increment;
-      if (new_position <= player_location.current_segment.len) {
-              player.current_location.segment_position = just_2_decimals(new_position/player_location.current_segment.len);
-      }
-      else
-      {
-          new_position -= player_location.current_segment.len;
-          player.current_location.current_segment = next_segment;
+  this.update_position_of_player = function (player, next_node) {
+      var player_location = player.current_position;
 
-          if (new_position>player_location.current_segment.len) { new_position = player_location.current_segment.len}
+      var position_calculator = new PositionCalculator(this.increment);
+      var new_position = position_calculator.get_next_position(player_location, player.target_node);
 
-          player.current_location.segment_position = just_2_decimals(new_position/player_location.current_segment.len);
+      player.current_position = new_position;
 
+      if (player.current_position == player.target_node) {
+          player.target_node = next_node;
       }
 
   }
@@ -136,8 +131,6 @@ var default_graph =
         }
     ]
 
-
-var default_next_segment = new Segment(2, new Point(20,20), new Point(30,20));
 
 
 function random_player_position_generator(players) {

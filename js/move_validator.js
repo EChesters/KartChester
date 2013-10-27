@@ -1,8 +1,8 @@
 function MoveValidator() {
-  this.validate = function(player_location, target_segment, graph_wrapper) {
-    connected_segments = graph_wrapper.get_connected_edges_ids(player_location.current_segment.id);
-    target_segment_position_in_connected_segments = connected_segments.indexOf(target_segment.id);
+  this.validate = function(target_node, next_node, graph_wrapper) {
+    connected_nodes = graph_wrapper.get_connected_node_ids(target_node.id);
+    target_node_position_in_connected_nodes = connected_nodes.indexOf(next_node.id);
 
-    return target_segment_position_in_connected_segments !== -1;
+    return target_node_position_in_connected_nodes !== -1;
   }
 }

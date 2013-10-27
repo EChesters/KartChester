@@ -2,28 +2,30 @@ function GraphWrapper(graph_json) {
 
     this.graph_json = graph_json;
 
-    this.get_connected_edges_ids = function (id_to_look_for) {
+    this.get_node_for_id = function(id) {
         for (var i=0; i<this.graph_json.length; i++) {
-            edge = this.graph_json[i];
-            if (edge.id == id_to_look_for ) {
-                return edge.connected_edges;
-            }
-        }
-        return [];
-    }
-
-    this.get_segment_for_id = function (id) {
-        for (var i=0; i<this.graph_json.length; i++) {
-            var edge = this.graph_json[i];
-            if (edge.id == id ) {
-                return new SegmentParser().parse([edge])[0];
+            var node = this.graph_json[i];
+            if (node.id == id ) {
+                return new Point(node.x, node.y, 1);
             }
         }
         return null;
     }
 
-    this.get_all_segments = function() {
-      var segment_parser = new SegmentParser();
-      return segment_parser.parse(this.graph_json);
+    this.get_connected_node_ids = function (id_to_look_for) {
+        for (var i=0; i<this.graph_json.length; i++) {
+            var node = this.graph_json[i];
+            if (node.id == id_to_look_for ) {
+                return node.connected_nodes;
+            }
+        }
+        return [];
+    }
+
+
+
+    this.get_all_nodes = function() {
+      var node_parser = new NodeParser();
+      return node_parser.parse(this.graph_json);
     }
 }

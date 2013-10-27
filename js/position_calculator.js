@@ -11,7 +11,7 @@ function PositionCalculator(increment) {
     var y_change = this.increment * Math.sin(gradient_to_node);
 
 
-    var new_position = new Point(current_position.x + x_change, current_position.y + y_change);
+    var new_position = new Point(current_position.x + x_change, current_position.y + y_change, 1);
 
     if (distance_between_points(current_position, new_position) > distance_between_points(current_position, target_node))
     {

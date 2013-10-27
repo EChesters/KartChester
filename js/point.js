@@ -1,4 +1,5 @@
-function Point(x,y) {
+function Point(x, y, id) {
+    this.id = id;
     this.x = just_2_decimals(x);
     this.y = just_2_decimals(y);
 }

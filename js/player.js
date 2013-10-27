@@ -1,5 +1,6 @@
-function Player(id, initial_location) {
+function Player(id, position, target_node) {
     this.name = id;
-    this.current_location = initial_location.get_a_copy();
+    this.current_position = position;
+    this.target_node = target_node;
 
 }

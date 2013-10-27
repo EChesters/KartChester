@@ -78,12 +78,14 @@ function Game(number_of_players) {
 }
 
 var default_graph =
-    [{"id":1,"x":33,"y":24.375,"connected_nodes":[2,3]},
-     {"id":2,"x":66.625,"y":24.875,"connected_nodes":[1,4]},
-     {"id":3,"x":33.125,"y":50.25,"connected_nodes":[1,4,5]},
-     {"id":4,"x":66.625,"y":50.375,"connected_nodes":[3,2,6]},
-     {"id":5,"x":32.75,"y":74.625,"connected_nodes":[6,3]},
-     {"id":6,"x":67.375,"y":74.125,"connected_nodes":[4,5]}]
+    [{"id":0,"x":21.2,"y":1.9,"connected_nodes":[1,7]},
+     {"id":1,"x":1.6901408450704225,"y":58.2,"connected_nodes":[0,2]},
+     {"id":2,"x":33.5,"y":72.1,"connected_nodes":[1,3]},
+     {"id":3,"x":58.2,"y":96.5,"connected_nodes":[2,4]},
+     {"id":4,"x":65.7,"y":85.5,"connected_nodes":[3,5]},
+     {"id":5,"x":74.3,"y":72.5,"connected_nodes":[4,6]},
+     {"id":6,"x":84.2,"y":59.4,"connected_nodes":[5,7]},
+     {"id":7,"x":96.8,"y":28.8,"connected_nodes":[6,0]}]
 
 
 

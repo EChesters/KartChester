@@ -2,15 +2,15 @@ $(document).ready(function() {
 
 	var node_selected = null;
 
-	var nodes = Array();
+	var connected_nodes = Array();
 
 	$('#map').click(function(e) {
 		var offset = $(this).offset();
 	    var posx = (e.clientX - offset.left);
 	    var posy = (e.clientY - offset.top);
 
-	    if (typeof nodes !== 'undefined' && nodes.length > 0) {
-	    	var nodeid = nodes.length; 
+	    if (typeof connected_nodes !== 'undefined' && connected_nodes.length > 0) {
+	    	var nodeid = connected_nodes.length; 
 	    }
 	    else {
 	    	var nodeid = 0;
@@ -19,14 +19,14 @@ $(document).ready(function() {
 	    position = normalise(posx, posy);
 
 	    var node = new Node(nodeid, position[0], position[1], Array());
-	    nodes.push(node);
+	    connected_nodes.push(node);
 
 	    $('#map').after( "<a href='#' data-id=" + nodeid + " class='node' style='top: " + (posy-10) +"px; left: "+ (posx-25) +"px '>node" + nodeid +"</a>");
 
 	    node_selected = null;
 
 	    //update textarea
-		$('#result-json').val(JSON.stringify(nodes));
+		$('#result-json').val(JSON.stringify(connected_nodes));
 
 	});
 
@@ -38,21 +38,21 @@ $(document).ready(function() {
 		}
 		else {
 			$('.node').css('background', 'white');
-			nodes[$(this).data('id')].nodes.push(node_selected);
-			nodes[node_selected].nodes.push($(this).data('id'));
+			connected_nodes[$(this).data('id')].connected_nodes.push(node_selected);
+			connected_nodes[node_selected].connected_nodes.push($(this).data('id'));
 			node_selected = null;
 		}
 
-		for (var i = 0; i < nodes.length; i++) {
-			uniqueNodes = [];
-			$.each(nodes[i].nodes, function(i, el){
-    			if($.inArray(el, uniqueNodes) === -1) uniqueNodes.push(el);
+		for (var i = 0; i < connected_nodes.length; i++) {
+			uniqueconnected_nodes = [];
+			$.each(connected_nodes[i].connected_nodes, function(i, el){
+    			if($.inArray(el, uniqueconnected_nodes) === -1) uniqueconnected_nodes.push(el);
 			});
-			nodes[i].nodes = uniqueNodes;
+			connected_nodes[i].connected_nodes = uniqueconnected_nodes;
 		}
 
 		//update textarea
-		$('#result-json').val(JSON.stringify(nodes));
+		$('#result-json').val(JSON.stringify(connected_nodes));
 
 	});	
 
@@ -65,9 +65,9 @@ function normalise(posx, posy) {
 		];
 }
 
-function Node(id, posx, posy, nodes) {
+function Node(id, posx, posy, connected_nodes) {
 	this.id = id;
 	this.x = posx;
 	this.y = posy;
-	this.nodes = nodes;
+	this.connected_nodes = connected_nodes;
 }

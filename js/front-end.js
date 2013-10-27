@@ -27,7 +27,7 @@ function Frontend(game) {
 			(normalize_position.x * $('#map').width()) / 100,
 			(normalize_position.y * $('#map').height()) / 100
 			);
-	} 
+	};
 
 	this.update = function update(players_positions) {
 	    for (var i = 0; i < players_positions.length; i++) {
@@ -35,10 +35,23 @@ function Frontend(game) {
 	    	$('#player'+ (i+1).toString()).css('left', size_normalized[0]);
 		    $('#player'+ (i+1).toString()).css('top', size_normalized[1]);
 	  	}
-  	}
+  	};
 
   	this.calculate_size = function(windows_height, windows_width, board_height, board_width) {
-		// return board h and w
-		return [windows_height, windows_width];
-	};		
+		var result_map_width = windows_width;
+		var result_map_height = (windows_width * board_height) / board_width;
+		
+		if (result_map_height <= windows_height && result_map_width <= windows_width) {
+			return [result_map_height, result_map_width];
+		}
+
+		var right_result_map_height = windows_height;
+		var right_result_map_width = (windows_height * board_width) / board_height;
+
+		return [right_result_map_height, right_result_map_width];
+	};
+
+	this.calculate_proportion = function(windows_length, board_length) {
+		return windows_length / board_length;
+	};
 };

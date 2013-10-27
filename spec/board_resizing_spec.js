@@ -36,4 +36,17 @@ describe("Board Resizer", function() {
 
     	expect(window_height).toEqual(size[0]);
     });
+
+    it("should return (4,8) when grid size is originally (2, 4)", function() {
+        window_width = 8;
+        window_height = 8;
+
+        board_width = 4;
+        board_height = 2;
+
+        var size = front.calculate_size(window_height, window_width, board_height, board_width);
+
+        expect(size[1]).toEqual(window_width);
+        expect(size[0]).toEqual(4);
+    });
 });

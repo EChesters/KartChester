@@ -37,7 +37,8 @@ io.sockets.on('connection', function (socket) {
     });
 
     function send_update() {
-        socket.emit('update',[1,2,3]);
+        console.log('update');
+        socket.emit('update',game_server.players);
     }
 
     setInterval(send_update,2000);

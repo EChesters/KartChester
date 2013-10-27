@@ -1,4 +1,4 @@
-function GameWrapper() {
+function GameWrapper(controller) {
 
     var socket = io.connect('http://localhost:8081');
 

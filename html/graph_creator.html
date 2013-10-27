@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Kartchester map</title>
+	<link rel="stylesheet" type="text/css" href="reset.css">
+	<link rel="stylesheet" type="text/css" href="main.css">
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/graph-creator.js"></script>
+
+    <style type="text/css">
+        .node {
+            position: absolute;
+            background: white;
+            border: 1px solid black;
+            font-family: arial;
+            padding: 10px;
+            width: 50px;
+            height: 20px;
+            text-align: center;
+        }
+
+        #result-json {
+            width: 600px;
+            margin: 0 auto;
+        }
+
+    </style>
+
+</head>
+<body>
+	<div id="board" class="board">
+		<p class="introText">KartChester!</p>
+		<img src="../res/Map.png" class="map" id="map">
+	</div>
+    <textarea id="result-json"></textarea>
+</body>
+</html>

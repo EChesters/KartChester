@@ -1,6 +1,6 @@
 function Point(x,y) {
-    this.x = x;
-    this.y = y;
+    this.x = just_2_decimals(x);
+    this.y = just_2_decimals(y);
 }
 
 function distance_between_points(one_point, another_point){

@@ -24,14 +24,13 @@ $bluecolor: #26ADE4;
 
 .board {
 	@include margins;
-	max-width: 800px;
-	max-height: 750px;
+	width: 800px;
 	margin: 0 auto;
 	position:relative;
 }
 
 .map {
-	height:100vh;
+	width: 100%;
 }
 
 .avatar {

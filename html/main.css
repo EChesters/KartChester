@@ -1,1 +1,55 @@
-.introText{color:#26ade4;font-family:'Slackey', cursive;font-size:20px;position:absolute;background-color:#fff;padding:5px;border:5px solid #26ade4}.board{margin-top:10px;max-width:800px;max-height:750px;margin:0 auto;position:relative}.map{height:100vh}.avatar{position:absolute;transition:all 0.7s ease-in;margin-top:-89px;margin-left:-39px;border:3px solid #6097f0;border-radius:5px;box-shadow:0px -3px 6px #fff}.avatar>img{vertical-align:top}.avatar>.arrow{width:0;height:0;border-left:10px solid transparent;border-right:10px solid transparent;border-top:10px solid #6097f0;position:absolute;bottom:-13px;left:27px}
+/*
+	COLOURS ====================
+*/
+/*
+	DIMENSIONS =================
+*/
+/* line 15, main.scss */
+.introText {
+  color: #26ade4;
+  font-family: 'Slackey', cursive;
+  font-size: 20px;
+  position: absolute;
+  background-color: white;
+  padding: 5px;
+  border: 5px solid #26ade4;
+}
+
+/* line 25, main.scss */
+.board {
+  margin-top: 10px;
+  width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* line 32, main.scss */
+.map {
+  width: 100%;
+}
+
+/* line 36, main.scss */
+.avatar {
+  position: absolute;
+  transition: all 0.7s ease-in;
+  margin-top: -89px;
+  margin-left: -39px;
+  border: 3px solid #6097f0;
+  border-radius: 5px;
+  box-shadow: 0px -3px 6px white;
+}
+/* line 44, main.scss */
+.avatar > img {
+  vertical-align: top;
+}
+/* line 47, main.scss */
+.avatar > .arrow {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #6097f0;
+  position: absolute;
+  bottom: -13px;
+  left: 27px;
+}
